@@ -27,8 +27,8 @@ if (process.env.NODE_ENV != 'test')
 		await listAuthenicatedUserRepos();
 		await listBranches(userId, "HW4-SSW345");
 		await createRepo("TEST-REPO");
-		//await createIssue(userId, repo, issue);
-		await enableWikiSupport(userId,repo);
+		//await createIssue(userId, "HW4-SSW345", issue);
+		await enableWikiSupport(userId,"HW4-SSW345");
 
 	})()
 }
@@ -165,6 +165,8 @@ async function createIssue(owner,repo, issueName, issueBody)
 async function enableWikiSupport(owner,repo)
 {
 	let options = getDefaultOptions(`/repos/${owner}/${repo}`, "PATCH");
+
+	options.body = JSON.stringify({has_wiki:true});
 	
 
 	// Send a http request to url and specify a callback that will be called upon its return.
