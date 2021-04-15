@@ -1,4 +1,4 @@
-Inside the "screenshot results" folder, you can see the result of my code after runnign "npm test" 
+Inside the "screenshot results" folder, you can see the result of my code after running "npm test" 
 
 The "create repo" test will be failed because the test repo having the same name has already been created when I test my code before.
 If you click my profile you will see it.
