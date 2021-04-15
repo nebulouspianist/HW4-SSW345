@@ -98,7 +98,7 @@ async function listBranches(owner,repo)
 	let options = getDefaultOptions(`/repos/${owner}/${repo}/branches`, "GET");
 
 	// Send a http request to url and specify a callback that will be called upon its return.
-	return new Promise(function(resolve, reject)
+	return new Promise(function(resolve)
 	{
 		request(options, function (error, response, body) {
 
@@ -129,7 +129,7 @@ async function createRepo(repo)
 	options.body = JSON.stringify({name: repo});
 
 	// Send a http request to url and specify a callback that will be called upon its return.
-	return new Promise(function(resolve, reject)
+	return new Promise(function(resolve)
 	{
 		request(options, function (error, response, body) {
 
@@ -151,9 +151,9 @@ async function createIssue(owner,repo, issueName, issueBody)
 	options.body = JSON.stringify({title: issueName, body:issueBody});
 
 	// Send a http request to url and specify a callback that will be called upon its return.
-	return new Promise(function(resolve, reject)
+	return new Promise(function(resolve)
 	{
-		request(options, function (error, response, body) {
+		request(options, function (error, response) {
 
 			resolve( response.statusCode );
 
@@ -170,7 +170,7 @@ async function enableWikiSupport(owner,repo)
 	
 
 	// Send a http request to url and specify a callback that will be called upon its return.
-	return new Promise(function(resolve, reject)
+	return new Promise(function(resolve)
 	{
 		request(options, function (error, response, body) {
 
